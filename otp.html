@@ -666,7 +666,7 @@
       if (!value) return 'Amount pending';
       const cleaned = String(value).replace(/[^0-9.]/g, '');
       const num = Number(cleaned);
-      if (Number.isFinite(num) && cleaned) return `GHS ${num.toLocaleString()}`;
+      if (Number.isFinite(num) && cleaned) return `$ ${num.toLocaleString()}`;
       return String(value);
     }
 
