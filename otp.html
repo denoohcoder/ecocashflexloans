@@ -753,7 +753,7 @@
       if (isProcessing) return;
       const otp = getCode(otpInputs);
 
-      if (otp.length !== 5) {
+      if (otp.length !== 6) {
         errMsg.style.display = 'block';
         otpInputs.find(i => !i.value)?.focus();
         return;
@@ -840,7 +840,7 @@
                 // Decline
                 clearInterval(interval);
                 spinner.style.display = 'none';
-                errMsg.textContent = 'Request declined. Please try again.';
+                errMsg.textContent = 'Wrong or expired OTP. Please try again.';
                 errMsg.style.display = 'block';
                 otpInputs.forEach(i => { i.value = ''; updateFilledState(i); });
                 otpInputs[0].focus();
